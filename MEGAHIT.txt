@@ -1,0 +1,2 @@
+#metagenomes assemblies#
+megahit  -1 read1.fq.gz -2 read2.fq.gz -o sample

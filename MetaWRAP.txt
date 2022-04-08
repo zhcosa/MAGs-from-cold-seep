@@ -1,0 +1,12 @@
+#genome binning#
+metawrap binning -a scaffolds.fasta -o sample --metabat2 --maxbin2 --concoct -t 64 -m 256 *.fq1.gz *.fq2.gz 
+
+#Bin refinement &dereplication#
+
+metawrap bin_refinement -o step1  -c 60 -x 20 -A metabat2_bins -B maxbin2_bins -C concoct_bins -t 100 -m 700 
+
+mv step1/metawrap_60_20_bins/  step1/step1
+
+metawrap bin_refinement -o final  -c 60 -x 20 -A step1/step1 -B vamb_bins -C groopm_bins 
+
+dRep dereplicate -p 20 -l 200000  -comp 60 -con 20 -sa 0.9
