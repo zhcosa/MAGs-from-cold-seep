@@ -1,0 +1,6 @@
+#find orthologs for phylogenetic analysis#
+mkdir faa
+mv *.faa faa/
+orthofinder -f faa/
+
+
