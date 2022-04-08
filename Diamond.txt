@@ -1,0 +1,5 @@
+#diamond#
+diamond blastp --id 35 --query-cover 60 -e 1e-6 -k 1 -d prokaryotes.dmnd -q annot.faa -o anno.m8
+
+
+#the database was from kegg
